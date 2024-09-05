@@ -1,0 +1,29 @@
+#include "DHT.h"  //biblioteca do sensor
+#define TIPO_SENSOR DHT11  //seleção do sensor utilizado
+const int PINO_SENSOR_DHT11 = A0; // Pino do sensor utilizado
+
+DHT sensorDHT(PINO_SENSOR_DHT11, TIPO_SENSOR); //funcionalidade da biblioteca
+
+void setup(){ // incialização do código
+  Serial.begin(9600); //velocidade
+  sensorDHT.begin(); //inicio
+  }
+
+void loop(){ //loop da funcionalidade do sensor
+  float umidade = sensorDHT.readHumidity(); //n da umidade 
+  float temperatura = sensorDHT.readTemperature();//n da temperatura
+
+  if(isnan(temperatura) || isnan(umidade)){ //condicional de temperatura e umidade
+    Serial.println("Erro ao ler os dados do sensor"); //mensagem de erro caso de algum
+    }else{
+      Serial.print("Umidade: ");  //outputs no monitor serial
+      Serial.print(umidade);
+      Serial.print(" % ");
+      Serial.print(" Temperatura: ");
+      Serial.print(temperatura);
+      Serial.print(" ºC ");    
+      }
+
+      delay(1000); // tempo de resposta 
+  
+  }
