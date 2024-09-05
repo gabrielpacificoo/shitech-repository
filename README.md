@@ -26,5 +26,5 @@ equipe;
 proteção a máquina pessoal;
 • API’s;
 • Sistema Operacional Lubuntu; Sistema que vai ser utilizado na Máquina Virtual;
-![Foto do Arduino uno r3 com o sensor DHT11](file:///C:/Users/guifi/Downloads/Captura%20de%20tela%202024-09-05%20093531.pngRL_da_Imagem)
+
 
