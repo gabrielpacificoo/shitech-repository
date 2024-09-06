@@ -1,0 +1,46 @@
+#include "DHT.h"
+
+#define DHTPIN A0     // Pino digital onde o DHT11 está conectado
+#define DHTTYPE DHT11   // Definindo o tipo de sensor DHT
+
+DHT dht(DHTPIN, DHTTYPE);
+
+void setup() {
+  Serial.begin(9600);
+  dht.begin();
+}
+
+void loop() {
+  // Espera entre as medições
+  delay(2000);
+
+  // Lê a umidade
+  float umidade = dht.readHumidity();
+  // Lê a temperatura em Celsius
+  float temperatura = dht.readTemperature();
+
+  // Verifica se alguma leitura falhou
+  if (isnan(umidade) || isnan(temperatura)) {
+    Serial.println("Falha ao ler do sensor DHT11!");
+    return;
+  }
+
+  // Imprime os valores no Serial Monitor
+  Serial.print("TempMaximo:");
+  Serial.print(30);
+  Serial.print(" ");
+  Serial.print("Temperatura:");
+  Serial.print(temperatura);
+  Serial.print(" ");
+  Serial.print("TempMinimo:");
+  Serial.print(25);
+  Serial.print(" ");
+  Serial.print("UmidadeMaxima:");
+  Serial.print(75);
+  Serial.print(" ");
+  Serial.print("Umidade:");
+  Serial.print(umidade);
+  Serial.print(" ");
+  Serial.print("UmidadeMinima:");
+  Serial.println(65);
+}
