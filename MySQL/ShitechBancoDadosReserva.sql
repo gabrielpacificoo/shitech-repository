@@ -13,7 +13,7 @@ CREATE TABLE cadastro(
 INSERT INTO cadastro (nivel, usuario, cpf, email, senha) VALUES
 ('administrador', 'Guilherme Augusto Figueiredo', '123.456.789-09','guilherme.figueiredo@shitech.com', 'shitech123'),
 ('administrador', 'Gabriel Feitosa Pacifico', '321.654.789-10','gabriel.feitosa@shitech.com', 'shitech321'),
-('administrador', 'Maria Eduarda Silva da Costa Guilherme', '032.423.735-04','maria.figueiredo@shitech.com', 'shitech234'),
+('administrador', 'Maria Eduarda Silva da Costa Guilherme', '032.423.735-04','maria.costa@shitech.com', 'shitech234'),
 ('administrador', 'Victor Silva de Lima', '042.345.655-01','victor.lima@shitech.com', 'shitech754'),
 ('administrador', 'Kaio Gabriel Ricz', '065.245.743-03','kaio.ricz@shitech.com', 'shitech723'),
 ('gerente', 'Ronaldo Roberto Oliveira', '512.353.645-05','ronaldo.oliveira@empresa.com', 'empresa123'),
