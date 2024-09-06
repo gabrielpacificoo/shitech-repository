@@ -34,7 +34,7 @@ void loop() {
   Serial.print(" ");
   Serial.print("TempMinimo:");
   Serial.print(25);
-  Serial.print(" ");
+  Serial.println(" ");
   Serial.print("UmidadeMaxima:");
   Serial.print(75);
   Serial.print(" ");
