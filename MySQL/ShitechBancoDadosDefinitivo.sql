@@ -3,7 +3,8 @@ USE Shitech;
 
 CREATE TABLE cadastro(
     id INT PRIMARY KEY AUTO_INCREMENT,
-    nivel VARCHAR(45) CONSTRAINT chknivel CHECK(nivel IN('administrador','gerente','funcionario')),
+    nivel VARCHAR(45), 
+    CONSTRAINT chknivel CHECK(nivel IN('administrador','gerente','funcionario')),
     usuario VARCHAR(45), 
     cpf CHAR(14),
     email VARCHAR(50),
@@ -24,14 +25,14 @@ INSERT INTO cadastro (nivel, usuario, cpf, email, senha) VALUES
 SELECT * FROM cadastro;
 desc cadastro;
 
-CREATE TABLE champignon(
+CREATE TABLE produto(
 id INT PRIMARY KEY AUTO_INCREMENT,
 dia date,
 horario TIME,
 temperaturaºC DECIMAL(5,2),
 umidade DECIMAL(5,2)	
 );
-INSERT INTO champignon (dia, horario, temperaturaºC, umidade) VALUES
+INSERT INTO produto (dia, horario, temperaturaºC, umidade) VALUES
 ('2024-09-01','08:00:00',22.5, 85.0),
 ('2024-09-01','08:30:00',23.0, 80.0),
 ('2024-09-01','09:00:00',21.5, 82.0),
@@ -45,29 +46,24 @@ INSERT INTO champignon (dia, horario, temperaturaºC, umidade) VALUES
 ('2024-09-04','12:30:00',23.1, 83.0),
 ('2024-09-04','13:00:00',21.0, 83.0);
 
-SELECT * FROM champignon;
-desc champignon;
+SELECT * FROM produto;
+desc produto;
 
-CREATE TABLE shimeji(
+CREATE TABLE cliente(
 id INT PRIMARY KEY AUTO_INCREMENT,
-dia date,
-horario TIME,
-temperaturaºC DECIMAL(5,2),
-umidade DECIMAL(5,2)	
+nomeEmpresa VARCHAR(45),
+CNPJ CHAR(18),
+responsavel VARCHAR(45)	
 );
 
-INSERT INTO shimeji (dia, horario, temperaturaºC, umidade) VALUES
-('2024-09-01', '08:00:00', 22.5, 85.0),
-('2024-09-01', '08:30:00', 23.0, 80.0),
-('2024-09-01', '09:00:00', 21.5, 82.0),
-('2024-09-02', '14:30:00', 22.0, 83.0),
-('2024-09-02', '15:00:00', 23.5, 79.0),
-('2024-09-02', '15:30:00', 21.3, 83.0),
-('2024-09-03', '09:00:00', 22.0, 83.0),
-('2024-09-03', '09:30:00', 22.5, 83.0),
-('2024-09-03', '10:00:00', 23.0, 83.0),
-('2024-09-04', '12:00:00', 22.7, 83.0),
-('2024-09-04', '12:30:00', 23.1, 83.0),
-('2024-09-04', '13:00:00', 21.0, 83.0);
-SELECT * FROM shimeji;
-desc shimeji;
+INSERT INTO cliente (nomeEmpresa, CNPJ, responsavel) VALUES
+('EmpresaXPTO', '62.526.818/0001-08', 'Jeremias da Silva'),
+('EmpresaXPTO2', '09.036.250/0001-56', 'Ronaldo Roberto Oliveira'),
+('EmpresaXPTO3', '65.210.622/0001-90', 'Gabriel Souza'),
+('EmpresaXPTO4', '65.210.622/0001-90', 'Odair Afonso'),
+('EmpresaXPTO5', '76.923.683/0001-10', 'Jefferson Camargo');
+-- TODOS OS CNPJ's E NOMES SÃO FICTICIOS.
+SELECT * FROM cliente;
+desc cliente;
+
+
